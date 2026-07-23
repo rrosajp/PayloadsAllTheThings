@@ -298,11 +298,11 @@ In PHP 7.0.25, `filter_var()` function with the parameter `FILTER_VALIDATE_URL` 
 There was a reserved tld called `.localhost`, it can accept arbiratry domains and resolves to the localhost ip, here is an example
 
 ```powershell
-$ ping ghahgahhah.localhost -c 1
-PING ghahgahhah.localhost (::1) 56 data bytes
+$ ping PayloadsAllTheThings.localhost -c 1
+PING PayloadsAllTheThings.localhost (::1) 56 data bytes
 64 bytes from ip6-localhost (::1): icmp_seq=1 ttl=64 time=0.070 ms
 
---- ghahgahhah.localhost ping statistics ---
+--- PayloadsAllTheThings.localhost ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.070/0.070/0.070/0.000 ms
 ```
