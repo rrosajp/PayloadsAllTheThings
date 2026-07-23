@@ -19,6 +19,7 @@
     * [Bypass Abusing URL Parsing Discrepancy](#bypass-abusing-url-parsing-discrepancy)
     * [Bypass PHP filter_var() Function](#bypass-php-filter_var-function)
     * [Bypass Using JAR Scheme](#bypass-using-jar-scheme)
+    * [Bypass Using TLD localhost](#bypass-using-tld-localhost)
 * [Exploitation via URL Scheme](#exploitation-via-url-scheme)
     * [file://](#file)
     * [http://](#http)
@@ -290,6 +291,20 @@ In PHP 7.0.25, `filter_var()` function with the parameter `FILTER_VALIDATE_URL` 
  echo var_dump(filter_var("http://test???test.com", FILTER_VALIDATE_URL));
  echo var_dump(filter_var("0://evil.com;google.com", FILTER_VALIDATE_URL));
 ?>
+```
+
+### Bypass Using TLD localhost
+
+There was a reserved tld called `.localhost`, it can accept arbiratry domains and resolves to the localhost ip, here is an example
+
+```powershell
+$ ping PayloadsAllTheThings.localhost -c 1
+PING PayloadsAllTheThings.localhost (::1) 56 data bytes
+64 bytes from ip6-localhost (::1): icmp_seq=1 ttl=64 time=0.070 ms
+
+--- PayloadsAllTheThings.localhost ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.070/0.070/0.070/0.000 ms
 ```
 
 ### Bypass Using JAR Scheme
